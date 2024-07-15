@@ -1,1 +1,4 @@
 # Portfolio-Optimization
+
+
+Currently, we are working on data preprocessing by ensuring every data points are cleaned and ready for analysis. We have also tweaked our dataframe for a more workable dataset. First of all, for example, we have dropped the index column as it provides no context or relavance in this particular project, and we have converted the date column into a date-time format if we need to use this feature later in the project. We are also working on standardizing the data points which will help with defining our alogrithm which will be sensitive to the scale of our input data. Since our data is very complete, there is no need for data imputation, which consolidates the integrity of our data and the how the model will be avoiding biases that could be caused by too much imputation.
