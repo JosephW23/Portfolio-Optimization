@@ -18,6 +18,58 @@ We found this project extremely interesting due to the combination of machine le
 
 We strongly believe that creating a good predictive model is the most important factor in predictive finance. A well coded model can help investors identity opportunities for profit, effectively manage potential risks, and overall contribute to making better informed decisions. In the context of our financial community, this implies more stable markets and better economic opportunties for its citizens. A accurate model can also help mitigate financial meltdowns and crises by allowing the finance world to react timely, which can contribute to significant and continued economic growth.
 
+## Methods
+
+### Data Exploration nb:  https://colab.research.google.com/drive/19GPu_rviNHSLKBmy_38112gOe7dZswtD?usp=sharing <br>
+
+We started by exploring the dataset to understand its characteristics and structure. The dataset consists of over 3 million rows across 8 columns, some relevant functions we have used are but not limited to:
+
+```
+print("\nSummary of the dataset:")
+print(df.info())
+
+print("\nDescriptive statistics of the dataset:")
+print(df.describe())
+
+print("\nMissing values in the dataset:")
+missing_values = df.isnull().sum()
+print(missing_values)
+```
+
+### Data Preprocessing
+
+1. Removing unnecessary columns: The dataset came with a index column, which we did not require, so we dropped it using
+
+```
+df.drop(columns=['Unamed: 0'], inplace = True)
+```
+
+2. Data type conversions: The date columns was converted into datetime format for easier manipulation for time series analysis
+
+```
+df['real_date'] = pd.to_datetime(df['real_date'])
+
+```
+
+3. Handling Skewed Distributions and Numerical/Categorical Features: We applied log transformations to skewed columns such as eop_lag and mop_lag to reduce skewness and normalized numerical features:
+
+```
+#Handling skewness
+df['value'] = df['value'] + 1e-6
+df['eop_lag'] = df['eop_lag'] + 1e-6
+df['mop_lag'] = df['mop_lag'] + 1e-6
+
+df['log_value'] = np.log1p(df['value'])
+df['log_eop_lag'] = np.log1p(df['eop_lag'])
+df['log_mop_lag'] = np.log1p(df['mop_lag'])
+
+# Normalize feature variables using z-scores
+for col in ['XGDP_NEG', 'XCPI_NEG', 'XPCG_NEG', 'RYLDIRS05Y_NSA']:
+    df_pivot[col + '_ZN4'] = (df_pivot[col] - df_pivot[col].mean()) / df_pivot[col].std()
+```
+
+
+
 
 
 ## Milestone 2: Data Preprocessing. 
