@@ -125,6 +125,7 @@ ridge_model_pipeline = Pipeline(steps=[
 ])
      
 ```
+![RR](RR.png)
 
 ### Model 3: Random Forest Regressor
 
@@ -167,6 +168,7 @@ grid_search.fit(X_train, y_train)
 # Best parameters
 print("Best parameters found: ", grid_search.best_params_)
 ```
+![RFR](RFR.png)
 
 ## Results
 
