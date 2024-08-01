@@ -7,7 +7,9 @@ Milestone 3: https://colab.research.google.com/drive/1Qv0hLxtsABuNxYEbuCjefbLN4L
 
 Link to Dataset: https://www.kaggle.com/datasets/macrosynergy/fixed-income-returns-and-macro-trends
 
-Link to Dataset: https://www.kaggle.com/datasets/macrosynergy/fixed-income-returns-and-macro-trends
+## Introduction:
+
+
 
 ## Milestone 2: Data Preprocessing. 
 
