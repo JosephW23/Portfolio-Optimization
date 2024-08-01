@@ -46,6 +46,23 @@ In the data exploration phase, we converted our CSV file to a DataFrame and exam
 
 **Code Snippet: Checking for null values, feature types, and pairplot visualization.**
 
+```
+print("\nSummary of the dataset:")
+print(df.info())
+
+print("\nDescriptive statistics of the dataset:")
+print(df.describe())
+
+print("\nMissing values in the dataset:")
+missing_values = df.isnull().sum()
+print(missing_values)
+
+```
+
+```
+
+```
+
 ### Preprocessing
 
 We cleaned the data by handling missing values, encoding categorical variables, and scaling numerical features. This step ensured that the data was in a suitable format for modeling.
