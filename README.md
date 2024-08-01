@@ -71,6 +71,27 @@ We cleaned the data by handling missing values, encoding categorical variables, 
 
 **Code Snippet: Filling missing values, encoding categorical variables, and scaling features.**
 
+```
+# Handling missing values
+df_pivot.sort_values(by=['cid', 'real_date'], inplace=True)
+df_pivot.fillna(method='ffill', inplace=True)
+```
+
+```
+# Normalize feature variables using z-scores
+for col in ['XGDP_NEG', 'XCPI_NEG', 'XPCG_NEG', 'RYLDIRS05Y_NSA']:
+    df_pivot[col + '_ZN4'] = (df_pivot[col] - df_pivot[col].mean()) / df_pivot[col].std()
+```
+
+```
+# Scaling and feature expansion
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('num', StandardScaler(), X.columns)
+    ]
+)
+```
+
 ### Model 1: Linear Regression
 
 Link to Model 1 Notebook: [Linear Regression Notebook](notebooks/Linear_Regression.ipynb)
@@ -78,6 +99,15 @@ Link to Model 1 Notebook: [Linear Regression Notebook](notebooks/Linear_Regressi
 Our first model was a Linear Regression model. We performed feature expansion and used a polynomial degree of 2 to capture non-linear relationships. The model showed a high R² value, indicating overfitting.
 
 **Code Snippet: Linear Regression model implementation with feature expansion.**
+```
+
+# Linear Regression pipeline
+linear_model_pipeline = Pipeline(steps=[
+    ('preprocessor', preprocessor),
+    ('feature_expansion', PolynomialFeatures(degree=2, include_bias=False)),
+    ('model', LinearRegression())
+])
+```
 
 ### Model 2: Ridge Regression
 
@@ -86,6 +116,15 @@ Link to Model 2 Notebook: [Ridge Regression Notebook](notebooks/Ridge_Regression
 Our second model was a Ridge Regression model, which added regularization to the Linear Regression to prevent overfitting. The model performed better but still showed signs of overfitting.
 
 **Code Snippet: Ridge Regression model implementation with feature expansion and regularization.**
+```
+# Ridge Regression pipeline
+ridge_model_pipeline = Pipeline(steps=[
+    ('preprocessor', preprocessor),
+    ('feature_expansion', PolynomialFeatures(degree=2, include_bias=False)),
+    ('model', Ridge(alpha=1.0))  # alpha is the regularization strength
+])
+     
+```
 
 ### Model 3: Random Forest Regressor
 
@@ -94,6 +133,40 @@ Link to Model 3 Notebook: [Random Forest Notebook](notebooks/Random_Forest.ipynb
 Our third model was a Random Forest Regressor, a non-linear model that combines several decision trees to capture complex relationships in the data. Initial results showed signs of overfitting, but hyperparameter tuning improved the model's performance.
 
 **Code Snippet: Random Forest Regressor model implementation and hyperparameter tuning.**
+```
+# Random Forest Regressor pipeline
+rf_model_pipeline = Pipeline(steps=[
+    ('preprocessor', preprocessor),
+    ('model', RandomForestRegressor(n_estimators=100, random_state=42))
+])
+```
+
+```
+# Define the parameter grid
+param_grid = {
+    'model__n_estimators': [50, 100, 200],
+    'model__max_depth': [None, 10, 20, 30],
+    'model__min_samples_split': [2, 5, 10],
+    'model__min_samples_leaf': [1, 2, 4],
+    'model__bootstrap': [True, False]
+}
+
+# Set up the pipeline
+rf_model_pipeline = Pipeline(steps=[
+    ('preprocessor', preprocessor),
+    ('model', RandomForestRegressor(random_state=42))
+])
+
+# Initialize GridSearchCV
+grid_search = GridSearchCV(estimator=rf_model_pipeline, param_grid=param_grid,
+                           cv=5, n_jobs=-1, scoring='r2', verbose=2)
+
+# Fit GridSearchCV
+grid_search.fit(X_train, y_train)
+
+# Best parameters
+print("Best parameters found: ", grid_search.best_params_)
+```
 
 ## Results
 
