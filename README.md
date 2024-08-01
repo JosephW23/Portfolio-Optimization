@@ -1,22 +1,115 @@
-# Portfolio-Optimization
+# Portfolio Optimization
 
-Links to our Milestones:
+## Links to our Milestones:
 
-Milestone 2: https://colab.research.google.com/drive/19GPu_rviNHSLKBmy_38112gOe7dZswtD?usp=sharing <br>
-Milestone 3: https://colab.research.google.com/drive/1Qv0hLxtsABuNxYEbuCjefbLN4LSL-cEM?usp=sharing <br>
-Milestone 4: https://colab.research.google.com/drive/1tB9dCcUKbNccw_W-pJ-Hq5x6bXn_b3Zb#scrollTo=CXyfOFP6U1pe <br>
+- [Milestone 2](https://colab.research.google.com/drive/19GPu_rviNHSLKBmy_38112gOe7dZswtD?usp=sharing)
+- [Milestone 3](https://colab.research.google.com/drive/1Qv0hLxtsABuNxYEbuCjefbLN4LSL-cEM?usp=sharing)
+- [Milestone 4](https://colab.research.google.com/drive/1tB9dCcUKbNccw_W-pJ-Hq5x6bXn_b3Zb?usp=sharing)
 
-Link to Dataset: https://www.kaggle.com/datasets/macrosynergy/fixed-income-returns-and-macro-trends
+Link to Dataset: [Kaggle Dataset](https://www.kaggle.com/datasets/macrosynergy/fixed-income-returns-and-macro-trends)
 
-## Introduction:
+## Introduction
 
-In the evolving world of finance, the most desirable skills are the ability to predict market trends and optimize portfolios. Our group's vision for this project is to leverage the knowledge we learned about machine learning to enhance such predictive accuracy through a dataset containing financial metrics. As a result, we are hoping to develop models that can offer valuable improvements to the decision making process in portfolio management.
+In the evolving world of finance, the most desirable skills are the ability to predict market trends and optimize portfolios. Our group's vision for this project is to leverage the knowledge we learned about machine learning to enhance such predictive accuracy through a dataset containing financial metrics. As a result, we are hoping to develop models that can offer valuable improvements to the decision-making process in portfolio management.
 
-We chose this dataset because it offers a extremely detailed analysis of financial performance indicators such as returns, macro trends, lagged values that includes data from more than 20 major markets from 2000 to 2022. The dataset contains quantamental indicators which is a combination of quantitative and qualitative data for trading strategies and also includes economic indicators such as GDP growth trends, price inflation trends, and etc... In conclusion, the completeness of the data allows us to uncover whatever intrinsic patterns that aren't apparent.
+We chose this dataset because it offers an extremely detailed analysis of financial performance indicators such as returns, macro trends, and lagged values that include data from more than 20 major markets from 2000 to 2022. The dataset contains quantamental indicators which are a combination of quantitative and qualitative data for trading strategies and also includes economic indicators such as GDP growth trends, price inflation trends, and more. In conclusion, the completeness of the data allows us to uncover intrinsic patterns that aren't apparent.
 
-We found this project extremely interesting due to the combination of machine learning aspects and real world application it provides. By developing these predictive models, we not only deepen our understanding of machine learning, but also provide potential opportunities to grow financially ourselves in the process of becoming financially independent.
+We found this project extremely interesting due to the combination of machine learning aspects and real-world applications it provides. By developing these predictive models, we not only deepen our understanding of machine learning, but also provide potential opportunities to grow financially ourselves in the process of becoming financially independent.
 
-We strongly believe that creating a good predictive model is the most important factor in predictive finance. A well coded model can help investors identity opportunities for profit, effectively manage potential risks, and overall contribute to making better informed decisions. In the context of our financial community, this implies more stable markets and better economic opportunties for its citizens. A accurate model can also help mitigate financial meltdowns and crises by allowing the finance world to react timely, which can contribute to significant and continued economic growth.
+We strongly believe that creating a good predictive model is the most important factor in predictive finance. A well-coded model can help investors identify opportunities for profit, effectively manage potential risks, and overall contribute to making better-informed decisions. In the context of our financial community, this implies more stable markets and better economic opportunities for its citizens. An accurate model can also help mitigate financial meltdowns and crises by allowing the finance world to react timely, which can contribute to significant and continued economic growth.
+
+## What Our Project Did
+
+Our project focused on developing and evaluating machine learning models to predict financial returns and optimize a portfolio. We used a historical financial dataset containing various economic indicators and returns. The main objectives were:
+
+1. **Data Exploration:** Understand the structure, characteristics, and relationships within the data.
+2. **Preprocessing:** Clean and prepare the data for modeling by handling missing values, encoding categorical variables, and scaling numerical features.
+3. **Model Development:** Implement three different models (Linear Regression, Ridge Regression, and Random Forest Regressor) to predict returns.
+4. **Model Evaluation:** Assess the performance of each model using metrics such as Mean Squared Error (MSE) and R-squared (R²) scores, and compare their ability to generalize to unseen data.
+5. **Improvement:** Tune hyperparameters and explore advanced techniques to improve model performance and reduce overfitting.
+
+### Accomplishments
+
+- **Developed Multiple Models:** Successfully implemented and evaluated Linear Regression, Ridge Regression, and Random Forest Regressor models.
+- **Insightful Comparisons:** Conducted thorough comparisons of model performances, identifying strengths and weaknesses of each approach.
+- **Feature Importance:** Analyzed feature importance in the Random Forest model, providing insights into which economic indicators were most influential in predicting returns.
+- **Addressed Overfitting:** Identified overfitting issues and took steps to mitigate them, such as hyperparameter tuning and considering more advanced models.
+- **Future Directions:** Outlined potential future work, including the use of reinforcement learning and advanced ensemble methods for further improvement.
+
+## Methods
+
+### Data Exploration
+
+Link to Data Exploration Notebook: [Data Exploration Notebook](notebooks/Data_Exploration.ipynb)
+
+In the data exploration phase, we converted our CSV file to a DataFrame and examined the data for missing values, data types, and overall structure. Initial visualizations helped us understand the relationships between different features and returns.
+
+**Code Snippet: Checking for null values, feature types, and pairplot visualization.**
+
+### Preprocessing
+
+We cleaned the data by handling missing values, encoding categorical variables, and scaling numerical features. This step ensured that the data was in a suitable format for modeling.
+
+**Code Snippet: Filling missing values, encoding categorical variables, and scaling features.**
+
+### Model 1: Linear Regression
+
+Link to Model 1 Notebook: [Linear Regression Notebook](notebooks/Linear_Regression.ipynb)
+
+Our first model was a Linear Regression model. We performed feature expansion and used a polynomial degree of 2 to capture non-linear relationships. The model showed a high R² value, indicating overfitting.
+
+**Code Snippet: Linear Regression model implementation with feature expansion.**
+
+### Model 2: Ridge Regression
+
+Link to Model 2 Notebook: [Ridge Regression Notebook](notebooks/Ridge_Regression.ipynb)
+
+Our second model was a Ridge Regression model, which added regularization to the Linear Regression to prevent overfitting. The model performed better but still showed signs of overfitting.
+
+**Code Snippet: Ridge Regression model implementation with feature expansion and regularization.**
+
+### Model 3: Random Forest Regressor
+
+Link to Model 3 Notebook: [Random Forest Notebook](notebooks/Random_Forest.ipynb)
+
+Our third model was a Random Forest Regressor, a non-linear model that combines several decision trees to capture complex relationships in the data. Initial results showed signs of overfitting, but hyperparameter tuning improved the model's performance.
+
+**Code Snippet: Random Forest Regressor model implementation and hyperparameter tuning.**
+
+## Results
+
+### Linear Regression
+
+- Training MSE: 2.6444872105683483e-31
+- Test MSE: 1.1537005234208904e-31
+- Training R²: 1.0
+- Test R²: 1.0
+
+### Ridge Regression
+
+- Training MSE: 1.453966772964182e-05
+- Test MSE: 1.4214579694990766e-05
+- Training R²: 0.9999533961393585
+- Test R²: 0.9999530193010754
+
+### Random Forest Regressor
+
+- Training MSE: 0.0015991635940493449
+- Test MSE: 0.0038223955048743608
+- Training R²: 0.9932320517075023
+- Test R²: 0.9808777373054388
+- Cross-Validation R² Scores: [-2.78935438, 0.28107945, 0.84705524, -0.49929551, -0.19701962]
+- Mean Cross-Validation R²: -0.4715069631131919
+
+### Improved Random Forest Regressor
+
+- Training MSE: 0.0014175949461399484
+- Test MSE: 0.003910450525903866
+- Training R²: 0.9940004829206452
+- Test R²: 0.9804372252648731
+- Cross-Validation R² Scores: [-2.64822255, 0.2695247, 0.86733604, -0.49947904, -0.18997028]
+- Mean Cross-Validation R²: -0.4401622252770364
+
 
 ## Methods
 
@@ -130,3 +223,45 @@ There is a tendency towards overfitting as the Random Forest Regressor model is 
 ### Conclusion 
 
 Overfitting was seen in the Random Forest Regressor, which had a very high training R2 (0.9940) and a poor test R2 (0.9804). The model's inability to generalize effectively across various data subsets is demonstrated by the wide variations in cross-validation R2 scores. This shows that even though the model is capable of capturing intricate non-linear correlations in the training set, it might not function as well in the absence of data.There are multiple ways to enhance the model. First, to determine the ideal parameters for the Random Forest model, a thorough hyperparameter tuning can be carried out using GridSearchCV or RandomizedSearchCV. Second, by using feature engineering, one can produce new features—such as interaction terms, polynomial features, or domain-specific transformations—that more accurately represent the underlying patterns in the data. Third, overfitting can be avoided by using models like XGBoost or Gradient Boosting that include built-in regularization. Fourth, the model's capacity for generalization can be enhanced by utilizing strong cross-validation methods like stratified k-fold to guarantee that it is assessed on a variety of data subsets. Fifth, to improve overall performance, take into account ensemble methods like stacking or blending, which combine the strengths of various models. Finally, adding extra data to the model's training set can aid it.
+
+## Discussion
+
+### Data Exploration
+
+The data exploration phase provided critical insights into the dataset, helping us identify relevant features and potential challenges. Visualizations and initial analyses informed our preprocessing strategies, ensuring that the data was well-prepared for modeling.
+
+### Preprocessing
+
+Effective preprocessing was crucial for cleaning the data and preparing it for modeling. Handling missing values, encoding categorical variables, and scaling numerical features ensured that our models received high-quality input data.
+
+### Model Comparison
+
+We compared three models: Linear Regression, Ridge Regression, and Random Forest Regressor. While the linear models showed overfitting, the Random Forest Regressor captured complex relationships but also exhibited overfitting. Hyperparameter tuning improved the Random Forest model, but further steps are needed to enhance its generalization capability.
+## Conclusion
+
+Overfitting was seen in the Random Forest Regressor, which had a very high training R² (0.9940) and a poor test R² (0.9804). The model's inability to generalize effectively across various data subsets is demonstrated by the wide variations in cross-validation R² scores. This shows that even though the model is capable of capturing intricate non-linear correlations in the training set, it might not function as well on unseen data.
+
+There are multiple ways to enhance the model:
+- **Hyperparameter Tuning:** Perform extensive hyperparameter tuning using GridSearchCV or RandomizedSearchCV to find the optimal parameters for the Random Forest model.
+- **Feature Engineering:** Create new features such as interaction terms, polynomial features, or domain-specific transformations that better capture the underlying patterns in the data.
+- **Regularization:** Implement models with built-in regularization like Gradient Boosting or XGBoost to prevent overfitting.
+- **Cross-Validation Strategy:** Use robust cross-validation techniques like stratified k-fold to ensure the model is evaluated on diverse data subsets, improving its generalization capability.
+- **Ensemble Methods:** Consider using ensemble methods like stacking or blending to combine the strengths of different models, improving overall performance.
+- **More Data:** If possible, gather more data to train the model. More data can help the model learn more robust patterns and reduce overfitting.
+
+By implementing these steps, we can build a Random Forest model that generalizes better and provides more reliable predictions for portfolio optimization.
+
+**Future Directions:**
+- **Forecasting and Reinforcement Learning:** Use the model for forecasting future returns and implementing reinforcement learning to continuously improve the model based on new data.
+- **Advanced Models:** Explore more advanced models and ensemble methods to improve prediction accuracy and robustness.
+- **Real-World Application:** Develop a user-friendly application that leverages the model for real-time portfolio optimization, providing actionable insights for investors.
+
+## Statement of Collaboration
+
+**Joseph Whiteman:**
+- Contribution: Data exploration, preprocessing, model implementation, and evaluation, writing sections of the report.
+
+**Ben Li:**
+- Contribution: Hyperparameter tuning, feature engineering, model evaluation, writing sections of the report.
+
+Both team members collaborated closely throughout the project, providing feedback and ensuring the successful completion of each milestone. The teamwork was instrumental in addressing challenges and refining the models.
