@@ -9,6 +9,16 @@ Link to Dataset: https://www.kaggle.com/datasets/macrosynergy/fixed-income-retur
 
 ## Introduction:
 
+In the evolving world of finance, the most desirable skills are the ability to predict market trends and optimize portfolios. Our group's vision for this project is to leverage the knowledge we learned about machine learning to enhance such predictive accuracy through a dataset containing financial metrics. As a result, we are hoping to develop models that can offer valuable improvements to the decision making process in portfolio management.
+
+### Why this dataset?
+
+We chose this dataset because it offers a extremely detailed analysis of financial performance indicators such as returns, macro trends, lagged values that includes data from more than 20 major markets from 2000 to 2022. The dataset contains quantamental indicators which is a combination of quantitative and qualitative data for trading strategies and also includes economic indicators such as GDP growth trends, price inflation trends, and etc... In conclusion, the completeness of the data allows us to uncover whatever intrinsic patterns that aren't apparent.
+
+### Why is it cool?
+
+We found this project extremely interesting due to the combination of machine learning aspects and real world application it provides. By developing these predictive models, we not only deepen our understanding of machine learning, but also provide potential opportunities to grow financially ourselves in the process of becoming financially independent.
+
 
 
 ## Milestone 2: Data Preprocessing. 
