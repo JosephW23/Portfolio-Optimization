@@ -4,6 +4,7 @@ Links to our Milestones:
 
 Milestone 2: https://colab.research.google.com/drive/19GPu_rviNHSLKBmy_38112gOe7dZswtD?usp=sharing <br>
 Milestone 3: https://colab.research.google.com/drive/1Qv0hLxtsABuNxYEbuCjefbLN4LSL-cEM?usp=sharing <br>
+Milestone 4: https://colab.research.google.com/drive/1tB9dCcUKbNccw_W-pJ-Hq5x6bXn_b3Zb#scrollTo=CXyfOFP6U1pe <br>
 
 Link to Dataset: https://www.kaggle.com/datasets/macrosynergy/fixed-income-returns-and-macro-trends
 
