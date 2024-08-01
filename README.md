@@ -211,6 +211,29 @@ print("Best parameters found: ", grid_search.best_params_)
 
 The exploration section was vital in understanding the dataset's behaviors and structure. Moreover, it was also the foundation of how we've decided to manipulate the data in order to create a more accurate model. The initial step, as we have seen, was crucial in highlighting potential issues, such as the skewed distributions on multiple features and outliers. These issues were all properly addressed in the preprocession stage. The figures that we have generated provides a visualized insight into the relationships between different features which ultimately guided us to our different models.
 
+### Model 1: Linear Regression
+
+Our first model served as a baseline for future references. We employed a second degree polynomial feature expansion to capture non-linear relationships. The model displayed both R<sup>2</sup> for training and testing datasets that could indicate overfitting trends. 
+
+The Linear Regression's perfect R<sup>2</sup> values implies that it was fitting the training data, however, the model's near perfect MSE scores combined with the R<sup>2</sup> values indicates that the model is overfitting. While the model captured the given dataset's pattern, we believe that it lacks the generalizing capability which makes it unsuitable for predicting unseen data.
+
+### Model 2: Ridge Regression
+
+To combat the issue of overfitting, we decided to implement a Ridge Regression, which adds a L2 regularization in order to penalize larger coefficients. This model performed better with high R<sup>2</sup> and low MSE values for both the training and testing sets. Moreover, the cross-validation R<sup>2</sup> scores implies consistent performance across several datasets, with a mean of 0.9992818331772734 and a range of 0.99812884 to 0.99984517. This improvement highlights the importance of regularization in building a effective model.
+
+### Model 3: Random Forest Regressor
+
+Lastly, we implemented a Random Forest Regressor, which is a non-linear model that could capture more complex relationships. While the initial result displayed signs of overfitting seen in the differences of the training/testing MSE, we employed hyperparameter tuning in effort to improve the model's performance.
+
+However, there is still a tendency towards overfitting as the Random Forest Regressor model is positioned more towards the right side of the graph. The extremely high training R2 score of 0.9940, which slightly decreases to 0.9804 for the test R2, and the notable differences in cross-validation R2 values demonstrate this. These indications point to the possibility that the model is underfitting to fresh data and overfitting to the training set. 
+
+## Conclusion
+
+Reflecting on our efforts as we made our progression through data exploration, preprocessing, and model development, our objective was to enhance the accuracy regarding predictive financial analysis. While we made great efforts to see the effectiveness of our models, there are many areas where we can improve the performance. For example, a more exhaustive search using RandomizedSearch could have optimized the performance of our Random Forest Model, advanced feature engineering such as domain transformations could have benefitted our Ridge and Linear Regression, and even incorporating more data (outside of project scope ) with more recent data could have helped our model learn more accurate patterns reflected in the modern society. By implementing these potential changes, we could have improved the accuracy and reduced signs of overfitting on our models.
+
+Among the three models we have developed, we believe that Ridge Regression performed the best because it effectively balanced bias and variance using L2 regularization. Unliked the linear regression which exhibited clear signs of overfitting, Ridge Regression maintained R<sup>2</sup> and MSE scores while also generalizing to unseen data. The strong cross-validation scores also implies its great performance which highlights its accuracy and robustness. We believe that Ridge Regression's ability to mitigate overfitting crowns itself as the most suitable model in the complex field of financial analysis.
+
+Looking back, this project has been a great learning experience that deepened our understanding of machine learning and all its intricacies. We believe that with the proper tools, a more complete dataset, and a better understanding of the techniques we have employed, we can develop models that can not only give accurate predictions of financial market trends, but also withstand the ever changing market conditions.
 
 
 ## Milestone 2: Data Preprocessing. 
@@ -233,6 +256,7 @@ Feature: Feature entails adding new features from current data to improve the mo
 Outlier Detection and Treatment: Outliers can have a major impact on model performance, particularly for those that are sensitive to data scale. Outliers will be identified and treated using techniques such as the Interquartile Range (IQR), Z-scores, and more complex methods such as isolation forests. Depending on their impact, outliers can be deleted or changed to reduce their influence.
 
 Splitting the Dataset: To evaluate a model, it is necessary to measure performance on previously unseen data. As a result, the dataset will be divided into training and testing sets using 'train_test_split'. A common split ratio is 70-80% training, 20-30% testing. This split allows the model to be trained on a large chunk of the data while being tested on a distinct sample to assess its generalization abilities.
+
 
 ## Milestone 3: Pre-Processing
 
