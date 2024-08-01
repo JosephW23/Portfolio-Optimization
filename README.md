@@ -202,6 +202,15 @@ print("Best parameters found: ", grid_search.best_params_)
 - Cross-Validation R² Scores: [-2.64822255, 0.2695247, 0.86733604, -0.49947904, -0.18997028]
 - Mean Cross-Validation R²: -0.4401622252770364
 
+
+## Discussion
+
+### Data Exploration and Preprocessing
+
+The exploration section was vital in understanding the dataset's behaviors and structure. Moreover, it was also the foundation of how we've decided to manipulate the data in order to create a more accurate model. The initial step, as we have seen, was crucial in highlighting potential issues, such as the skewed distributions on multiple features and outliers. These issues were all properly addressed in the preprocession stage. The figures that we have generated provides a visualized insight into the relationships between different features which ultimately guided us to our different models.
+
+
+
 ## Milestone 2: Data Preprocessing. 
 
 Missing Values Handling: The dataset was checked for missing values and discovered to be free of them. This is a good circumstance because it streamlines the preprocessing stages. However, it is critical to routinely check for missing values, especially after applying transformations or integrating additional datasets, to ensure data integrity is maintained throughout the research.
