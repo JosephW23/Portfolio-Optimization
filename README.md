@@ -44,7 +44,7 @@ Link to Data Exploration Notebook: [Data Exploration Notebook](notebooks/Data_Ex
 
 In the data exploration phase, we converted our CSV file to a DataFrame and examined the data for missing values, data types, and overall structure. Initial visualizations helped us understand the relationships between different features and returns.
 
-**Code Snippet: Checking for null values, feature types, and correlation heatmap.**
+**Code Snippet: Checking for null values, feature types, and correlation heatmap/pairplot visualization.**
 
 ```
 print("\nSummary of the dataset:")
@@ -59,9 +59,11 @@ print(missing_values)
 
 ```
 
-```
+![PP1](PP1.png)
 
-```
+![PP2](PP2.png)
+
+![Heatmap](Heatmap.png)
 
 ### Preprocessing
 
